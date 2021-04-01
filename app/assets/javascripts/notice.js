@@ -1,7 +1,7 @@
 setTimeout(()=> {
-    $(".notice").hide().empty();
+    $(".notice").hide().empty().remove();
 }, 2000);
 
 setTimeout(()=> {
-    $(".alert").fadeOut().empty();
+    $(".alert").fadeOut().empty().remove();
 }, 2000);

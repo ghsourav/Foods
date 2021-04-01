@@ -16,7 +16,7 @@ class KmdashboardController < ApplicationController
     @cartitem=  Cartitem.where(cart_id: cartid)
     render json: @cartitem
   end
-
+  
   def userdetails
     @user = User.find(params[:id])
     render json: @user
