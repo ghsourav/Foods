@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Foods</title>
+    <%= csrf_meta_tags %>
+
+    <!-- Compiled and minified CSS -->
+
+    <!-- Compiled and minified JavaScript -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+
+    <nav>
+
+        <%= render "partial/dnav" %>
+
+    </nav>
+    <%= render "partial/notic" %>
+   
+        <%= yield %>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</div>
+
+
+</html>

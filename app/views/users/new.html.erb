@@ -1,0 +1,34 @@
+<section class="container ">
+
+    <div class="row">
+
+        <div class="col s6 "></div>
+        <div class="col mtp s4 card z-depth-5 m6 l6">
+              <fieldset>
+                <legend style="color:red"> Registration </legend>
+            <%= form_for :user, url: '/users' do |f| %>
+            <i class="material-icons">account_box</i>
+            First Name: <%= f.text_field :fname %>
+            <i class="material-icons">account_box</i>
+            Last Name: <%= f.text_field :lname %>
+            <i class="material-icons">mail</i>
+            Email: <%= f.email_field :email %>
+            <i class="material-icons">contact_phone
+            </i>
+            Contact: <%= f.number_field :contact %>
+            Password: <%= f.password_field :password %>
+            Password Confirmation: <%= f.password_field :password_confirmation %>
+            <%= f.submit "Submit",value:"Singup" %>
+            <% end %>
+
+              </fieldset>
+
+        </div>
+
+        <div class="col s2">
+        </div>
+
+
+
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="row">
+    <% @menus.each do |menu| %>
+        <% if veg(menu)%>
+      <div class="col s6 m3">
+
+       <div class="card cart<%=controller_name%>" data-menuid="<%=menu.id%>">
+            <div class="card-image">
+                <img src="<%= menu.image%>">
+                <% if veg(menu)%>
+                <a href="/veg"><span data-badge-caption="item" class="  badge green">Veg</span></a>
+                <%else%>
+                <a href="/nonveg"><span data-badge-caption="item" class="new badge red">Non Veg</span></a>
+                <%end%>
+                <span class="card-title"><%= menu.name %><br/>Rs <%= menu.price %>
+            </div>
+            <div class="card-content">
+                <p><%= menu.description %></p>
+            </div>
+            <div class="a2 card-action">
+           
+            <button type="submit" class="btn addcart" data-menu="<%=menu.id%>">Add to Cart</button>
+
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <%end%>
+    <%end%>
+</div>

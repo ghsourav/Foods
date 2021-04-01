@@ -1,0 +1,27 @@
+ <div class="nav-wrapper bgmain z-depth-1">
+     <a href='/' class="brand-logo"><i class="material-icons left">local_dining</i>Foods</a>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <% if current_kmuser%>
+            <!--Kithen Nav Start-->
+         <li><a href="/maneger">Current Orders</a></li>
+         <li><a href="/k/complete">Completed Order</a></li>
+         <li><a class="waves-effect waves-light btn red" href="/kmlogout"><i class="material-icons left">settings_power</i>Kithen Logout</a></li>
+            <!--Kithen Nav End-->
+         <% else %>
+         <li><a href="/veg">Veg</a></li>
+         <li><a href="/nonveg">Non Veg</a></li>
+         <% if current_user_auth %>
+            <!--User Login nav Start-->
+         <li><a href="/profile/<%= current_user_auth.id %>"> <i class="material-icons left">account_box</i> <%= current_user_auth.fname %> <%= current_user_auth.lname %> </a> </li>
+         <li><a href="/logout">Logout<i class="material-icons left">settings_power</i></a></li>
+            <!--User Login nav End-->
+         <% else %>
+         <li><%=link_to 'Login','/login',class:"waves-effect waves-light"%><i class="material-icons left">accessibility</i></li>
+         <li><a class="waves-effect waves-light" href="/register"> <i class="material-icons left">add_circle_outline</i> Register</a></li>
+         <% end %>
+
+
+         <% end %>
+
+     </ul>
+ </div>

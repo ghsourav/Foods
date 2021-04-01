@@ -1,0 +1,48 @@
+         <% if current_user_auth %>
+         <% if order_matching %>
+         <h5>
+             Hi <%=current_user_auth.fname%> , <br><br> Your Order No is <%=@placeorder.id%> & Bill No is <%=@placeorder.cart_id%>
+             <br>
+             Your Order will be delivered at <b><%=@placeorder.deliverytype%></b>
+             <br>
+             Your Order status is <b><%=@placeorder.payment%> </b>
+             <br>
+             Your Order status is <b><%=@placeorder.status%> </b>
+         </h5>
+
+
+        <section>
+   
+
+      <table>
+        <thead>
+          <tr>
+              <th></th>
+              <th>qty</th>
+              <th>Price</th>
+              <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+         <% @cartitem.each do |c| %>
+         <tr>
+             <td><%=c.menu_name%></td>
+             <td><%=c.qty%></td>
+             <td><%=c.price%></td>
+             <td><%=c.total%></td>
+         <%end%>
+          </tr>
+          </tbody>
+      </table>
+  </section>
+
+           <h5> Your Bill is <%= billamount  %> </h5>
+
+         <% else %>
+
+         <h3>It is not your Order ID.Please Cheke your Order</h3>
+         <% end %>
+
+         <% else %>
+         <p>Login to See Order Status </p>
+         <% end %>

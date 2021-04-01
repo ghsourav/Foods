@@ -1,0 +1,27 @@
+<h1>Dashboard</h1>
+
+
+
+<section>
+   
+
+      <table>
+        <thead>
+          <tr>
+              <th>Bill No</th>
+              <th>Orders</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @placeorder.each do |p| %>
+            <tr>
+                <td><%=p.cart_id%></td>
+                <td><a href="/placeorder/<%=p.id%>">Details</a></td>
+            </tr>
+            <%end%>
+        </tbody>
+      </table>
+
+
+
+</section>

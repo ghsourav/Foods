@@ -1,0 +1,39 @@
+<div class="row" >
+    <div class="col s12 m8 l4 offset-m2 offset-l4">
+        <div class="card">
+
+            <div class="card-action teal bgmain z-depth-2 lighten-1 white-text">
+                <h3>Login </h3>
+            </div>
+            <%= form_tag '/loginuser' do %>
+
+            <div class="card-content">
+                <div class="form-field">
+
+                    <label for="username">Email:-</label>
+
+                    <%= text_field_tag :email %>
+
+
+                </div><br>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+                     <%= password_field_tag :password %>
+
+                </div><br>
+
+
+
+                <div class="form-field">
+                    <%= submit_tag "Submit" ,class:"btn-large waves-effect green waves-dark"%>
+
+                </div><br>
+            </div>
+<% end %>
+
+        </div>
+    </div>
+</div>
+
+
