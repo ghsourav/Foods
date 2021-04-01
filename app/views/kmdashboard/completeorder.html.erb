@@ -1,25 +1,20 @@
-    <section class="container">
+<section class="container">
     <table class="striped" >
         <thead>
             <tr>
                 <th>Order id</th>
                 <th>Deliverytype</th>
                 <th>Order Status</th>
-                <!--<th>Payment</th>-->
                 <th>Order Details</th>
                 <th>Customer Details</th>
             </tr>
         </thead>
         <tbody>
             <% @placeorder.each do |p|%>
-                <%if p.status=='complete'%>
             <tr>
                 <td><%=p.id%></td>
                 <td><%=p.deliverytype%></td>
-                <td>
-                    <%=p.status%>
-                </td>
-                <!--<td><input type="checkbox"  name="payment"><span>Payment Done</span></td>-->
+                <td> <%=p.status%></td>
                 <td>
                     <a class="waves-effect waves-light btn modal-trigger ordermodal" data-order="<%=p.id%>" href="#order">Order Deatils</a>
                 </td>
@@ -28,8 +23,8 @@
                 </td>
             </tr>
             <%end%>
-            <%end%>
         </tbody>
+        </table>
 </section>
 
 <!-- Modal Structure Order Details Start-->

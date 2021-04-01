@@ -1,3 +1,31 @@
 // Place all the styles related to the placeorder controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.placeorder.show{
+
+    .preview{
+        border: 1px solid gray;
+     }
+     .preview_height{
+        height: 12rem;
+    }
+    .container{
+        margin-top: 2%;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .row .col.s6 {
+          width: 100% !important;
+        }
+        
+
+      }
+
+    
+}
+
+
+

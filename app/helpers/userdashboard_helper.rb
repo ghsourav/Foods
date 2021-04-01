@@ -1,7 +1,6 @@
 module UserdashboardHelper
     def current_user_auth
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
-
     end
 
     def authorize

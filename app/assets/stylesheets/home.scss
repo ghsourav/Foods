@@ -1,15 +1,41 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.carthome{
-    height: 40rem;
-    p{
-        overflow: hidden;
-        height: 12rem;
+.home.index{
+    select {
+       display: block !important;
+   }   
+   
+    .fixed-action-btn{
+        display: none;
+    }
+   @media screen and (max-width:600px) {
+    .s9{
+        width: 100%;
+    };
+    .s3{
+        display: none;
+    }
+    
+    .s6{
+        width: 90% !important;
+        height: auto;
+    }
+    .fixed-action-btn{
+        display: block;
+        top: 50%;
     }
    
-    
+       
+   }
 }
 
-
+.home{
+    .carthome{
+        height: 40rem;
+        p{
+            overflow: hidden;
+            height: 12rem;
+        }
+    } 
+}

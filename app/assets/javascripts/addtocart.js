@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+let cart=(function(){
 
     function UpdateChangeListner(){
         //Update Cart Start
@@ -13,7 +13,6 @@ $(document).ready(function(){
                  method:"POST",
                  data: {id:cartitemid,qty:cartitemqty},
                  success: (data)=>{
-                    console.log(`Cart update`)
                     showcart()
                  }
              })
@@ -37,14 +36,13 @@ $(document).ready(function(){
                 }
                 
                 let cartid=x[0].cart_id
-
                 
                 for(i = 0;i < x.length ; i++){
-                    output +=  "<tr><td>"+ x[i].menu_name +"</td><td><select  data-qty=" + x[i].id +" class='qtycart' ><option value="+ x[i].qty +" selected>"+ x[i].qty +"</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option></select></td><td>" +  x[i].price + "</td> <td>"+ x[i].total +"</td><td> <button class='delitem material-icons btn pink' data-id="+x[i].id+" >remove_shopping_cart</button></td></tr>";
+                    output +=  "<tr><td>"+ x[i].menu_name +"</td><td><select  data-qty=" + x[i].id +" class='qtycart' ><option value="+ x[i].qty +" selected>"+ x[i].qty +"</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option></select></td><td>" +  x[i].price + "</td> <td>"+ x[i].total +"</td><td> <button class='delitem material-icons btn pink' data-id="+x[i].id+" ><i class='material-icons left'>remove_shopping_cart</i></button></td></tr>";            
                 }
                 $("#carttbody").html(output);
-                $("#billamount").html("<h5> Total Amount:-" + x[0].billamount + "</h5>");
-
+                $(".mobileviewbtn").append("<a href='#'><i class='material-icons left'>remove_shopping_cart</i>"+ x.length +"</a>")
+                $("#billamount").html("<h5> Total Amount:-" + x[0].billamount + "</h5>")
                 $("#inputcartid").html("<input type='hidden' name='cart_id' value="+ cartid +" >")
                 UpdateChangeListner();
             }
@@ -53,6 +51,11 @@ $(document).ready(function(){
     //Get Cart Data End here
     }
     showcart();
+
+
+    
+
+
 
     //Create Cart Start here
     $(".addcart").on("click",function(e){
@@ -71,6 +74,8 @@ $(document).ready(function(){
     });
                 //Create Cart End here
        
+
+
     //Delete Cart data Start
 
     $("#carttbody").on("click",".delitem",function(){
@@ -92,3 +97,8 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(()=>{
+    if( $(".home.index").length){
+        cart()
+    }
+})

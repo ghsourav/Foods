@@ -1,10 +1,4 @@
 module ApplicationHelper
-
-
-
-   
-
-
     def current_cart
         if !session[:cart_id].nil?
             Cart.find(session[:cart_id])
@@ -12,7 +6,5 @@ module ApplicationHelper
             Cart.new
         end
     end
-
-   
 end
 

@@ -3,13 +3,13 @@ class UserdashboardController < ApplicationController
   before_action:authorize 
 
   def index
-  
     @placeorder= Placeorder.where(user_id: current_user_auth.id)
-   # render json: @placeorder
+    placeorderlast= Placeorder.where(user_id: current_user_auth.id).last.cart_id
+    @cartitem=  Cartitem.where(cart_id: placeorderlast)
+   # render json:@cartitem
   end
 
   def profile
     @user = User.find(params[:id])
-   # @Placeorder=Placeorder.find_by_user_id.
   end
 end

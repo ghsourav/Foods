@@ -13,8 +13,18 @@
  *= require_tree .
  *= require_self
  */
- @import "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css";
+@import "materialize/components/color-variables";
+@import "materialize/components/icons-material-design";
+/*$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("green", "base") !default;
+*/
+@import 'materialize';
+
+
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+ @import "datatable.min.css";
  
- 
+
+
+
 

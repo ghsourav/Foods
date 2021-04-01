@@ -1,48 +1,62 @@
-         <% if current_user_auth %>
-         <% if order_matching %>
-         <h5>
-             Hi <%=current_user_auth.fname%> , <br><br> Your Order No is <%=@placeorder.id%> & Bill No is <%=@placeorder.cart_id%>
-             <br>
-             Your Order will be delivered at <b><%=@placeorder.deliverytype%></b>
-             <br>
-             Your Order status is <b><%=@placeorder.payment%> </b>
-             <br>
-             Your Order status is <b><%=@placeorder.status%> </b>
-         </h5>
+       <div class="container z-depth-1 padding ">
+           <% if current_user_auth %>
+                <% if order_matching %>
+                    <div class="row ">
+                        <div class="col s6 preview preview_height ">
+                            <h4><i class=" material-icons amber-text lighten-2">local_dining</i> Foods</h4>
+                            <br>
+                            Hi, <%=current_user_auth.fname%> <br><br> Your Order No is <%=@placeorder.id%> & Bill No is <%=@placeorder.cart_id%>
+                        </div>
+                        <div class="col s6 preview preview_height">
+                            <p>Your Order will be delivered at <b><%=@placeorder.deliverytype%></b> counter
+                                <br>
+                                <br>
+                                Your Order status is <b><%=@placeorder.status%> </b></p>
+                        </div>
+                    </div>
+                    <section class="preview">
+                        <table>
+                            <thead>
+                                <tr>
+                                        <th></th>
+                                    <th>qty</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @cartitem.each do |c| %>
+                                <tr>
+                                    <td><%=c.menu_name%></td>
+                                    <td><%=c.qty%></td>
+                                    <td><%=c.price%></td>
+                                    <td><%=c.total%></td>
+                                    <%end%>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row" style="display:block">
+                            <div class="col s6">
+                                <button class="btn blue waves-effect waves-light">Invoice Download</button>
+                            </div>
+                            <div class="col s6">
+                                <h5 class="right padding"> Your Total Bill is <%=billamount%></h5>
+                            </div>
+                        </div>
+                    </section>
 
 
-        <section>
-   
+                <% else %>
 
-      <table>
-        <thead>
-          <tr>
-              <th></th>
-              <th>qty</th>
-              <th>Price</th>
-              <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-         <% @cartitem.each do |c| %>
-         <tr>
-             <td><%=c.menu_name%></td>
-             <td><%=c.qty%></td>
-             <td><%=c.price%></td>
-             <td><%=c.total%></td>
-         <%end%>
-          </tr>
-          </tbody>
-      </table>
-  </section>
+                <h3>It is not your Order ID.Please Cheke your Order</h3>
+                <% end %>
 
-           <h5> Your Bill is <%= billamount  %> </h5>
+           <% else %>
+           <p>Login to See Order Status </p>
+           <a href="login" class="btn green">Login to Continue</a>
+           <% end %>
 
-         <% else %>
 
-         <h3>It is not your Order ID.Please Cheke your Order</h3>
-         <% end %>
+       </div>
 
-         <% else %>
-         <p>Login to See Order Status </p>
-         <% end %>
+       

@@ -8,6 +8,6 @@ module KmdashboardHelper
     end
 
     def kmauthorize
-        redirect_to '/login' unless current_kmuser
-      end
+        redirect_to '/klogin' unless current_kmuser
+    end
 end

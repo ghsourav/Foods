@@ -1,5 +1,5 @@
-$(document).ready(function(){
 
+kitchen = function(){    
     //get order start here
     $(".ordermodal").on("click",function(){
         let output
@@ -25,6 +25,7 @@ $(document).ready(function(){
             }
             })
     })
+
     //get order end here
 
 
@@ -73,10 +74,16 @@ $(document).ready(function(){
 
     //Modal Calling Start
     $('.modal').modal()
-
     //Modal Calling End
 
+    //Datatable Start
+    $('.striped').DataTable()
+    //Datatable End
 
-    $('.striped').DataTable();
+}
+$(document).ready(function(){
+    if($(".kmdashboard").length){
+        kitchen();
+    }
+});
 
-})

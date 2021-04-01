@@ -1,9 +1,7 @@
 class PlaceorderController < ApplicationController
-    def index
-
-    end
-
     
+    before_action :placeorder_find,only:[:update,:show]
+  
     def create
         placeorder =Placeorder.new(placeorder_params)  
         if placeorder.save
@@ -18,17 +16,19 @@ class PlaceorderController < ApplicationController
 
 
     def update
-        @placeorder = Placeorder.find(params[:id])
         @placeorder.update_attributes(placeorder_params)
     end
 
     def show
-        @placeorder = Placeorder.find(params[:id])
         cartid = Placeorder.find(params[:id]).cart_id
         @cartitem=  Cartitem.where(cart_id: cartid)
     end
 
     private
+
+    def placeorder_find
+        @placeorder = Placeorder.find(params[:id])
+    end
 
     def placeorder_params
         params.permit(:cart_id, :user_id,:deliverytype,:status,:payment)

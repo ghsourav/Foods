@@ -1,16 +1,34 @@
 <h1>Dashboard</h1>
-
-
-
-<section>
-   
-
-      <table>
+<section class="container">
+    <header>
+      <h5>Your Last Order</h5>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @cartitem.each do |c| %>
+                <tr>
+                    <td><%=c.menu_name%></td>
+                    <td><%=c.qty%></td>
+                    <td><%=c.price%></td>
+                    <td><%=c.total%></td>
+                    <%end%>
+                </tr>
+            </tbody>
+        </table>
+    </header>
+    <table>
         <thead>
-          <tr>
-              <th>Bill No</th>
-              <th>Orders</th>
-          </tr>
+            <tr>
+                <th>Bill No</th>
+                <th>Orders</th>
+            </tr>
         </thead>
         <tbody>
             <% @placeorder.each do |p| %>
@@ -20,8 +38,5 @@
             </tr>
             <%end%>
         </tbody>
-      </table>
-
-
-
+    </table>
 </section>

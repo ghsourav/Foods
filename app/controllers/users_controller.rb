@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   include UserdashboardHelper
-  #before_action:authorize 
   before_action:login?
   
   def new
@@ -17,9 +16,6 @@ class UsersController < ApplicationController
       flash[:alert] = user.errors.full_messages[0]
     end
   end
-
-
-  
 
   private
   def user_params

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do  
-  get 'kmsessions/new'
+  get '/klogin', to:'kmsessions#new'
 
   post 'kmsessions/create'
 
   get '/kmlogout', to:'kmsessions#destroy'
 
-  get 'kmusers/new'
+  get '/kmadd', to:'kmusers#new'
 
   post 'kmusers/create'
 

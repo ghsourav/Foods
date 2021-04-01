@@ -1,29 +1,64 @@
-<div class="row">
-    <% @menus.each do |menu| %>
-        <% if nonveg(menu)%>
-
-    <div class="col s6 m3">
-
- <div class="card cart<%=controller_name%>" data-menuid="<%=menu.id%>">
-            <div class="card-image">
-                <img src="<%= menu.image%>">
-                <% if veg(menu)%>
-                <a href="/veg"><span data-badge-caption="item" class="  badge green">Veg</span></a>
-                <%else%>
-                <a href="/nonveg"><span data-badge-caption="item" class="new badge red">Non Veg</span></a>
+<section class="row">
+    <div class="col s9">
+        <div class="row">
+            <% @menus.each do |menu| %>
+                <%if Enable(menu)%>
+                    <% if timings(menu)%>
+                        <div class="col s6 m3">
+                            <div class="card cart<%=controller_name%>" data-menuid="<%=menu.id%>">
+                                <div class="card-image">
+                                    <img src="<%= menu.image%>">
+                                    <% if veg(menu)%>
+                                        <a href="/veg"><span data-badge-caption="item" class="  badge green">Veg</span></a>
+                                    <%else%>
+                                        <a href="/nonveg"><span data-badge-caption="item" class="new badge red">Non Veg</span></a>
+                                    <%end%>
+                                    <span class="card-title"><%= menu.name %><br />Rs <%= menu.price %>
+                                </div>
+                                <div class="card-content">
+                                    <p><%= menu.description %></p>
+                                </div>
+                                <div class="a2 card-action">
+                                    <button type="submit" class="btn addcart" data-menu="<%=menu.id%>">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    <%end%>
                 <%end%>
-                <span class="card-title"><%= menu.name %><br/>Rs <%= menu.price %>
-            </div>
-            <div class="card-content">
-                <p><%= menu.description %></p>
-            </div>
-            <div class="a2 card-action">
-           
-            <button type="submit" class="btn addcart" data-menu="<%=menu.id%>">Add to Cart</button>
-
-
-            </div>
+            <%end%>
         </div>
-    <%end%>
-    <%end%>
-</div>
+    </div>
+    <div class="col s3">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="carttbody"></tbody>
+        </table>
+        <section class="placeordersection">
+        <div id="billamount"></div>
+        <% if current_user_auth %>
+            <form action="placeorder/create" method="POST">
+                <p id="inputcartid"></p>
+                <input type='hidden' name='user_id' value="<%= current_user_auth.id %>">
+                <label>What you want</label>
+                <select name="deliverytype" class="select" required>
+                    <option disabled selected>Choose  Dine In/Take away</option>
+                    <option value="Dinein">Dine In</option>
+                    <option value="Takeaway">Take Away</option>
+                </select>
+                <input type='submit' value="place order" class="btn green">
+            </form>
+        <% else %>
+            <a href="login" class="btn green">Login to Continue</a>
+        <% end %>
+        </section>
+    </div>
+</section>
+

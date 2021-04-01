@@ -5,17 +5,13 @@
                 <th>Order id</th>
                 <th>Deliverytype</th>
                 <th>Order Status</th>
-                <!--<th>Payment</th>-->
                 <th>Order Details</th>
                 <th>Customer Details</th>
-
             </tr>
         </thead>
-
         <tbody>
             <% @placeorder.each do |p|%>
             <%if p.status!='complete'%>
-
             <tr>
                 <td><%=p.id%></td>
                 <td><%=p.deliverytype%></td>
@@ -28,7 +24,6 @@
                         <option value="complete">Completed</option>
                     </select>
                 </td>
-                <!--<td><input type="checkbox"  name="payment"><span>Payment Done</span></td>-->
                 <td>
                     <a class="waves-effect waves-light btn modal-trigger ordermodal" data-order="<%=p.id%>" href="#order">Order Deatils</a>
                 </td>
@@ -36,11 +31,7 @@
                     <a class="waves-effect waves-light btn modal-trigger usermodal" data-user="<%=p.user_id%>" href="#userdetails">Customer Contacts</a>
                 </td>
             </tr>
-
-
-
             <%end%>
-
             <%end%>
         </tbody>
 
@@ -48,36 +39,27 @@
 
 
 </section>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.css"/>
- 
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
 
 <!-- Modal Structure Order Details Start-->
 <div id="order" class="modal">
     <div class="modal-content">
         <h4>Orders</h4>
-            <div id="mbody">
-            </div>
+            <div id="mbody"></div>
             <h5 id="billordermodal"></h5>
     </div>
     <div class="modal-footer">
     </div>
 </div>
-
 <!-- Modal Structure Order Details End-->
-
 
 <!-- Modal Structure user Details Start-->
 <div id="userdetails" class="modal">
     <div class="modal-content">
         <h4>Customer Details</h4>
-
-        <div id="cdetails">
-
-        </div>
-
+        <div id="cdetails"></div>
     </div>
     <div class="modal-footer">
     </div>
 </div>
 <!-- Modal Structure user Details End-->
+
