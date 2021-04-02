@@ -24,7 +24,9 @@ $secondary-color: color("green", "base") !default;
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
  @import "datatable.min.css";
  
-
+select{
+    display: block;
+}
 
 
 

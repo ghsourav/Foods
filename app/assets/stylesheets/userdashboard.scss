@@ -1,3 +1,39 @@
 // Place all the styles related to the Userdashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.userdashboard.index{
+    footer{
+        padding: 2rem;
+    }
+    .row {
+        text-align: center;
+      }
+      .content,.content2{
+        display: none;
+
+      }
+     #showMore,#showMore2{
+        display: block;
+        margin: 0 auto;
+
+    }
+      #showMore:hover,#showMore2:hover {
+        color:#ffb300 ;
+        background: #fff  !important;
+        border: 1px solid #ffb300 ;
+        text-decoration: none;
+        border-radius: 20px;
+      }
+      .NoorderAVl{
+          background: transparent !important;
+          color: black !important;
+          border: 1px transparent solid;
+      }
+
+    @media screen and(max-width:1030px) {
+        .col.m2{
+            width: 80% !important;
+        }
+        
+    }
+}

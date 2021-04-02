@@ -69,9 +69,6 @@ kitchen = function(){
 
     //Staus Update End
 
-    
-
-
     //Modal Calling Start
     $('.modal').modal()
     //Modal Calling End

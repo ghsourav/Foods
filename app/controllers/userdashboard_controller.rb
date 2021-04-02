@@ -6,7 +6,9 @@ class UserdashboardController < ApplicationController
     @placeorder= Placeorder.where(user_id: current_user_auth.id)
     placeorderlast= Placeorder.where(user_id: current_user_auth.id).last.cart_id
     @cartitem=  Cartitem.where(cart_id: placeorderlast)
-   # render json:@cartitem
+    @placeordercurrent= @placeorder.where.not(status:'complete')
+
+    #render json:placeordercurrent
   end
 
   def profile

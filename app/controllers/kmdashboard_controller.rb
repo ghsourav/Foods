@@ -4,6 +4,7 @@ class KmdashboardController < ApplicationController
 
   def index
     @placeorder= Placeorder.where.not(status:'complete')
+    #@placeorder =Placeorder.all
   end
 
   def completeorder

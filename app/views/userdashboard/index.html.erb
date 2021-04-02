@@ -1,7 +1,49 @@
 <h1>Dashboard</h1>
+
+<style>
+
+</style>
 <section class="container">
-    <header>
-      <h5>Your Last Order</h5>
+    <header class="row ">
+        <h5>Current Orders</h5>
+         <% @placeordercurrent.each do |p| %>
+        <div class="col s1 m2 content">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>Your bill no is <b><%=p.cart_id%></b>  </p>
+                    </div>
+                    <div class="card-action">
+                        <a class="btn orange" target="_blank" href="/placeorder/<%=p.id%>">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%end%>
+    </header>
+            <button class="btn amber darken-1" data-class="content" id="showMore">Check Current Pending Orders</button>
+
+    <main class="row">
+        <h5>Order History</h5>
+        <% @placeorder.each do |p| %>
+        <div class="col s1 m2 content2">
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>Your bill no is <b><%=p.cart_id%></b></p>
+                    </div>
+                    <div class="card-action">
+                        <a target="_blank" class="btn lime darken-1" href="/placeorder/<%=p.id%>">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%end%>
+    </main>
+    <button class="btn amber darken-1" data-class="content2" id="showMore2">Chek Past Orders</button>
+
+    <footer class="card">
+        <h5>Your Last Order</h5>
         <table>
             <thead>
                 <tr>
@@ -19,24 +61,14 @@
                     <td><%=c.price%></td>
                     <td><%=c.total%></td>
                     <%end%>
+
                 </tr>
             </tbody>
         </table>
-    </header>
-    <table>
-        <thead>
-            <tr>
-                <th>Bill No</th>
-                <th>Orders</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @placeorder.each do |p| %>
-            <tr>
-                <td><%=p.cart_id%></td>
-                <td><a href="/placeorder/<%=p.id%>">Details</a></td>
-            </tr>
-            <%end%>
-        </tbody>
-    </table>
+        <h5> Your Total Bill is <%=billamount%></h5>
+
+
+
+    </footer>
+
 </section>
