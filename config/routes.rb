@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   get '/veg', to:'home#veg'
+  get '/view/cart', to:'home#viewcart'
 
   get '/nonveg', to:'home#nonveg'
 

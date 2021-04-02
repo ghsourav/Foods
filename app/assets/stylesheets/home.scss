@@ -8,7 +8,11 @@
     .fixed-action-btn{
         display: none;
     }
-   @media screen and (max-width:600px) {
+    #mcartclose{
+        display: none;
+    }
+
+   @media screen and (max-width:900px) {
     .s9{
         width: 100%;
     };
@@ -17,14 +21,28 @@
     }
     
     .s6{
-        width: 90% !important;
+        width: 100% !important;
         height: auto;
     }
     .fixed-action-btn{
         display: block;
-        top: 50%;
+        bottom: 15%;
     }
-   
+    #mcartclose{
+        display: block;
+    }
+    .mdisplayBlock{
+        display: block !important;
+        width: 100%;
+    }
+    .mdisplayNone{
+        display: none !important;
+    }
+    .table{
+        width: 400px;
+        height: auto;
+        margin: 0 auto;
+    }
        
    }
 }
