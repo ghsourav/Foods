@@ -43,9 +43,11 @@ let cartcount
                    menuid = x[i].menu_id
                 }
                 console.log(menuid)
-                console.log(x.length)
+                cartcount =  parseInt(x.length)
+                console.log(cartcount)
+                $("#mcart").text(cartcount)
                 $("#carttbody").html(output);
-                $(".mobileviewbtn").html("<a href='#'><i class='material-icons left'>remove_shopping_cart</i>"+ x.length +"</a>")
+                $(".mobileviewbtn").html("<a href='#'><i class='material-icons left'>remove_shopping_cart</i></a>")
                 if (x.length!=0){
                     $("#billamount").hide()
                 }else{
@@ -88,6 +90,7 @@ let cartcount
     //Delete Cart data Start
 
     $("#carttbody").on("click",".delitem",function(){
+        cartcount = cartcount-1
         let delid =$(this).attr("data-id");
         let menuid =$(this).attr("data-menuid");
         let deldata= {id:delid}
@@ -99,6 +102,8 @@ let cartcount
             success: function(data) {
                 $(delthis).closest("tr").fadeOut().html("Menu was removed").fadeOut(3000).remove()
                 $("#mid"+menuid).html("<button type='submit' class='btn addcart' data-menu="+ menuid +">Add to Cart</button>")
+                console.log(cartcount)
+                $("#mcart").text(cartcount)
 
             }
 
