@@ -17,10 +17,17 @@
         margin: 0 auto;
 
     }
-      #showMore:hover,#showMore2:hover {
+      #showMore:hover {
         color:#ffb300 ;
         background: #fff  !important;
         border: 1px solid #ffb300 ;
+        text-decoration: none;
+        border-radius: 20px;
+      }
+      #showMore2:hover {
+        color:#c0ca33 ;
+        background: #fff  !important;
+        border: 1px solid #c0ca33;
         text-decoration: none;
         border-radius: 20px;
       }
@@ -32,7 +39,7 @@
 
     @media screen and(max-width:1030px) {
         .col.m2{
-            width: 80% !important;
+            width: 100% !important;
         }
         
     }

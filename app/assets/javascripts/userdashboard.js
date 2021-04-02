@@ -10,12 +10,9 @@ let userdashboard = function(){
             if($("."+contentclass+":hidden").length == 0) {
                 $("#"+btnid).removeClass("btn").text("No more orders Avialable").addClass("NoorderAVl");
             }
-
         })
-    });
+   });
 }
-
-
 $(document).ready(function(){
     if($(".userdashboard").length){
         userdashboard()
