@@ -44,7 +44,7 @@ let cart=(function(){
                     $("#mid"+x[i].menu_id).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>")
                 }
                 $("#carttbody").html(output);
-                $("#mid"+menuid).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>")
+                $("#mid"+menuid).html("<a  class='btn amber darken-1' href='#'>GO to Cart</a>")
                 $(".mobileviewbtn").append("<a href='#'><i class='material-icons left'>remove_shopping_cart</i>"+ x.length +"</a>")
                 $("#billamount").html("<h5> Total Amount:-" + x[0].billamount + "</h5>")
                 UpdateChangeListner();
