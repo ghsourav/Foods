@@ -1,4 +1,5 @@
 let Home = function(){
+    /*  Mobile  View Start*/
     $("#mcart").on("click",function(){
         $(".col.s3").addClass("mdisplayBlock")
         $(".col.s3").children("table").addClass("table")
@@ -12,7 +13,7 @@ let Home = function(){
         $(".col.s9").removeClass("mdisplayNone")
     })
 }
-
+    /*  Mobile  View End*/
 $(document).ready(()=>{
     if( $(".home.index").length){
         Home()
