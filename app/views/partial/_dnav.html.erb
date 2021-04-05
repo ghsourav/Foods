@@ -1,6 +1,9 @@
  <div class="nav-wrapper bgmain z-depth-1">
      <a href='/' class="brand-logo"><i class="material-icons left">local_dining</i>Foods</a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
      <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
          <% if current_kmuser%>
                <!--Kithen Nav Start-->
             <li><a href="/maneger">Current Orders</a></li>
@@ -10,6 +13,9 @@
          <% else %>
             <li><a href="/veg">Veg</a></li>
             <li><a href="/nonveg">Non Veg</a></li>
+   
+    
+        
             <% if current_user_auth %>
                   <!--User Login nav Start-->
                <li><a href="/profile/<%= current_user_auth.id %>"> <i class="material-icons left">account_box</i> <%= current_user_auth.fname %> <%= current_user_auth.lname %> </a> </li>
@@ -23,4 +29,7 @@
          <% end %>
 
      </ul>
+
+
  </div>
+

@@ -2,33 +2,32 @@
     <div class="col s9">
         <div class="row">
             <% @menus.each do |menu| %>
-            <%if Enable(menu)%>
-            <% if timings(menu)%>
-            <div class="col s6 m3">
-                <div class="card cart<%=controller_name%>" data-menuid="<%=menu.id%>">
-                    <div class="card-image">
-                        <img src="<%= menu.image%>">
-                        <% if veg(menu)%>
-                        <a href="/veg"><span data-badge-caption="item" class="  badge green">Veg</span></a>
-                        <%else%>
-                        <a href="/nonveg"><span data-badge-caption="item" class="new badge red">Non Veg</span></a>
-                        <%end%>
-                        <span class="card-title"><%= menu.name %><br />Rs <%= menu.price %>
+                <%if Enable(menu)%>
+                    <% if timings(menu)%>
+                    <div class="col s6 m3">
+                        <div class="card cart<%=controller_name%>" data-menuid="<%=menu.id%>">
+                            <div class="card-image">
+                                <img src="<%= menu.image%>">
+                                <% if veg(menu)%>
+                                <a href="/veg"><span data-badge-caption="item" class="  badge green">Veg</span></a>
+                                <%else%>
+                                <a href="/nonveg"><span data-badge-caption="item" class="new badge red">Non Veg</span></a>
+                                <%end%>
+                                <span class="card-title"><%= menu.name %><br />Rs <%= menu.price %>
+                            </div>
+                            <div class="card-content">
+                                <p><%= menu.description %></p>
+                            </div>
+                            <div class="a2 card-action" id="mid<%=menu.id%>">
+                                <button type="submit" class="btn addcart" data-menu="<%=menu.id%>">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p><%= menu.description %></p>
-                    </div>
-                    <div class="a2 card-action" id="mid<%=menu.id%>">
-                        <button type="submit" class="btn addcart" data-menu="<%=menu.id%>">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <%end%>
-            <%end%>
+                    <%end%>
+                <%end%>
             <%end%>
         </div>
     </div>
-
 
     <div class="col s3">
         <table>
@@ -59,8 +58,6 @@
                 </select>
                 <input type='submit' value="place order" class="btn green">
             </form>
-
-              
                 <% else %>
                     <a href="login" class="btn green">Login to Continue</a>
                 <% end %>
@@ -68,10 +65,8 @@
     </div>
 </section>
 
-
 <div class="fixed-action-btn">
     <button id="mcart" class="btn-floating btn-large lime">
         <i class="large material-icons">shopping_cart</i>
     </button>
-
 </div>
