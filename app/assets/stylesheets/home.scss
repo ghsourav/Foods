@@ -13,8 +13,9 @@
     }
 
    @media screen and (max-width:900px) {
-    .s9{
-        width: 100%;
+    .col.s9{
+        width: 80%;
+        height: 20rem
     };
     .s3{
         display: none;
@@ -42,6 +43,9 @@
         width: 400px;
         height: auto;
         margin: 0 auto;
+    }
+    .home.carthome{
+        width: 100%;
     }
        
    }

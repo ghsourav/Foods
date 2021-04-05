@@ -39,12 +39,10 @@ let cartcount
                    /*  if($("#mid"+x[i].menu_id)){
                         $(this).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>")
                      }*/
-                     $("#mid"+x[i].menu_id).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>")
-
+                     $("#mid"+x[i].menu_id).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>") 
                    menuid = x[i].menu_id
-
                 }
-               /* console.log(menuid)
+                /*console.log(menuid)
                 cartcount =  parseInt(x.length)
                 console.log(cartcount)*/
                 $("#mcart").text(cartcount)
