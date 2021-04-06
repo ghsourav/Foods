@@ -6,7 +6,7 @@ let userdashboard = function(){
         let contentclass =$(this).attr("data-class")
         $("."+contentclass).slice(0,2).show();
         $("#"+btnid).on("click",function(){
-            $("."+contentclass+":hidden").slice(0,2).fadeIn();
+            $("."+contentclass+":hidden").slice(0,2).fadeIn(1000);
             if($("."+contentclass+":hidden").length == 0) {
                 $("#"+btnid).removeClass("btn").text("No more orders Avialable").addClass("NoorderAVl");
             }

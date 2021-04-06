@@ -33,12 +33,8 @@ Rails.application.routes.draw do
   post '/users', to:'users#create'
   #User end
   root to: 'home#index'
-
   get '/veg', to:'home#veg'
   get '/view/cart', to:'home#viewcart'
-
   get '/nonveg', to:'home#nonveg'
-
   get '/all', to:'home#all'
-
 end

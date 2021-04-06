@@ -2,61 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .home.index{
-    select {
-       display: block !important;
-   }   
-    .fixed-action-btn{
-        display: none;
-    }
-    #mcartclose{
-        display: none;
-    }
-
-   @media screen and (max-width:900px) {
-    .col.s9{
-        width: 80%;
-        height: 20rem
-    };
-    .s3{
-        display: none;
-    }
-    
-    .s6{
-        width: 100% !important;
-        height: auto;
-    }
-    .fixed-action-btn{
-        display: block;
-        bottom: 15%;
-    }
-    #mcartclose{
-        display: block;
-    }
-    .mdisplayBlock{
-        display: block !important;
-        width: 100%;
-    }
-    .mdisplayNone{
-        display: none !important;
-    }
-    .table{
-        width: 400px;
-        height: auto;
+ 
+    .menuimg{
+        height: 200px;
+        width: 200px;
         margin: 0 auto;
     }
-    .home.carthome{
-        width: 100%;
+    .qtycart{
+        width: 4rem !important;
     }
-       
-   }
+    td{
+        width: 10rem !important;
+    }
+   
+    
 }
 
-.home{
-    .carthome{
-        height: 40rem;
-        p{
-            overflow: hidden;
-            height: 12rem;
-        }
-    } 
-}
+

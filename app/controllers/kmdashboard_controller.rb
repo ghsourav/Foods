@@ -3,12 +3,11 @@ class KmdashboardController < ApplicationController
   before_action:kmauthorize 
 
   def index
-    @placeorder= Placeorder.where.not(status:'complete')
-    #@placeorder =Placeorder.all
+    @placeorder= Placeorder.where.not(status:'complete').reverse
   end
 
   def completeorder
-    @placeorder= Placeorder.where(status:'complete')
+    @placeorder= Placeorder.where(status:'complete').reverse
   end
 
   def getorder

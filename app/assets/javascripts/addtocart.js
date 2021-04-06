@@ -11,7 +11,9 @@ let cartcount
                  method:"POST",
                  data: {id:cartitemid,qty:cartitemqty},
                  success: (data)=>{
-                    $(".notice").text("Menu quantity updated as"+cartitemqty).fadeOut(1000).remove(1500)
+                    M.toast({html: 'Cart is Updated quantity is ' +cartitemqty,classes: 'lime rounded'})
+
+                    //$(".notice").text("Menu quantity updated as"+cartitemqty).fadeOut(1000).remove(1500)
                     showcart()
                  }
              })
@@ -35,7 +37,7 @@ let cartcount
                 let cartid=x[0].cart_id
                 $("#inputcartid").html("<input type='hidden' name='cart_id' value="+ cartid +" >")
                 for(i = 0;i < x.length ; i++){
-                    output +=  "<tr><td>"+ x[i].menu_name +"</td><td><select  data-qty=" + x[i].id +" class='qtycart' ><option value="+ x[i].qty +" selected>"+ x[i].qty +"</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option></select></td><td>" +  x[i].price + "</td> <td>"+ x[i].total +"</td><td> <button class='delitem material-icons btn pink' data-menuid="+x[i].menu_id+" data-id="+x[i].id+" ><i class='material-icons left'>remove_shopping_cart</i></button></td></tr>";            
+                    output +=  "<tr><td>"+ x[i].menu_name +"</td><td><select  data-qty=" + x[i].id +" class='browser-default qtycart' ><option value="+ x[i].qty +" selected>"+ x[i].qty +"</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option></select></td><td>" +  x[i].price + "</td> <td>"+ x[i].total +"</td><td> <button class='delitem material-icons btn pink' data-menuid="+x[i].menu_id+" data-id="+x[i].id+" ><i class='material-icons left'>remove_shopping_cart</i></button></td></tr>";            
                    /*  if($("#mid"+x[i].menu_id)){
                         $(this).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>")
                      }*/
@@ -78,6 +80,8 @@ let cartcount
             success: (data)=>{
             showcart()
             $("#mid"+menuid).html("<a  class='btn amber darken-1' href='#'>GO to Cart</a>")
+            M.toast({html: 'Added to Cart',classes:'rounded lime'})
+
 
             },
 
@@ -101,7 +105,7 @@ let cartcount
                 $(delthis).closest("tr").fadeOut().html("Menu was removed").fadeOut(3000).remove()
                 $("#mid"+menuid).html("<button type='submit' class='btn addcart' data-menu="+ menuid +">Add to Cart</button>")
                 $("#mcart").text(cartcount)
-
+                M.toast({html: 'Removed from Cart',classes: 'rounded red accent-1'})   
             }
 
         });
