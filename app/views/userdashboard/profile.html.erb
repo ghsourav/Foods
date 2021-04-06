@@ -1,12 +1,13 @@
 <section class="container">
-    <div class="row">
+    <div class="row center-align">
+        <!--
+        <div class="col xl-6  ">
 
-        <div class="card z-depth-2 center">
             <h3><%= @user.fname %> <%= @user.lname %> <i class="material-icons blue-text">verified_user</i>
 
             </h3>
         </div>
-        <div class="col s12  z-depth-2 card-panel border-radius-6 bg-opacity-9">
+        <div class="col xl-6">
             <h6 class="mb-2 mt-2 bg-blue"><i class="material-icons">error_outline</i> Personal Info</h6>
             <table class="striped">
                 <tbody>
@@ -35,9 +36,39 @@
             </table>
 
         </div>
+    -->
+        
+      <div class="col xl6 l6 m12 s12 ">
+      
+          <img style="width:50%" class="responsive-img circle" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 
+      <h3><%= @user.fname %> <%= @user.lname %> <i class="material-icons blue-text">verified_user</i></h3></div>
+      <div class="col xl6 l6 m12 s12 card">
+      <table class="striped">
+                <tbody>
+                  <tr>
+                        <td>Email:</td>
+                        <td> <%= @user.email %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Contact:</td>
+                        <td> <%= @user.contact %>
+                        </td>
 
-
+                    </tr>
+                    <tr>
+                        <td>Create at:</td>
+                        <td> <%= @user.created_at %>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+      
+      
+      
+      </div>
+    
 
 
     </div>
