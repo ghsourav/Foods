@@ -48,8 +48,11 @@
                 <h3>It is not your Order ID.Please Cheke your Order</h3>
                 <% end %>
            <% else %>
-            <p>Login to See Order Status </p>
-            <a href="login" class="btn green">Login to Continue</a>
+            <div class="center-align">
+                <h5>Login to See Order Status</h5> 
+                <%= link_to "Login to Continue", user_login_path ,class:"btn green"%>
+                <p class="red-text">*** If order no <b><%=@placeorder.id%></b> belongs to you.It's shows details ***</p>
+            </div>
            <% end %>
        </div>
 
