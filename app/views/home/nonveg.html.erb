@@ -1,29 +1,27 @@
 <section class="row">
     <div class="col s9">
         <div class="row">
-            <% @menus.each do |menu| %>
-                <%if Enable(menu)%>
-                    <% if timings(menu)%>
-                    <div class="col s6 m3">
-                        <div class="card cart<%=controller_name%>" data-menuid="<%=menu.id%>">
-                            <div class="card-image">
-                                <img src="<%= menu.image%>">
-                                <% if veg(menu)%>
-                                <a href="/veg"><span data-badge-caption="item" class="  badge green">Veg</span></a>
-                                <%else%>
-                                <a href="/nonveg"><span data-badge-caption="item" class="new badge red">Non Veg</span></a>
-                                <%end%>
-                                <span class="card-title"><%= menu.name %><br />Rs <%= menu.price %>
+           <% @menus.each do |menu| %>
+                <% if timings(menu)%>
+                    <div class="col xl3 l3 m6 s12 ">
+                        <!--Product Start-->
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator responsive-img menuimg" src="<%= menu.image%>">
                             </div>
                             <div class="card-content">
-                                <p><%= menu.description %></p>
+                                <span class="card-title activator grey-text text-darken-4"><%=menu.name%><i class="material-icons right">more_vert</i></span>
+                                <p><div class="a2 card-action" id="mid<%=menu.id%>">
+                                    <button type="submit" class="btn addcart" data-menu="<%=menu.id%>">Add to Cart</button>
+                                </div></p>
                             </div>
-                            <div class="a2 card-action" id="mid<%=menu.id%>">
-                                <button type="submit" class="btn addcart" data-menu="<%=menu.id%>">Add to Cart</button>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4"><%=menu.name%><i class="material-icons right">close</i></span>
+                                <p><%=menu.description%></p>
                             </div>
                         </div>
+                        <!--Product End-->
                     </div>
-                    <%end%>
                 <%end%>
             <%end%>
         </div>

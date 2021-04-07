@@ -1,16 +1,5 @@
 module HomeHelper
 
-    def Enable(menu)
-        menu.enable == true
-    end
-
-    def veg(menu)
-        menu.veg == true
-    end
-
-    def nonveg(menu)
-        menu.veg == false
-    end
 
     def timings(menu)
         current_time_hour = Time.now.hour

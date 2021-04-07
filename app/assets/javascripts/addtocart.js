@@ -41,7 +41,7 @@ let cartcount
                    /*  if($("#mid"+x[i].menu_id)){
                         $(this).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>")
                      }*/
-                     $("#mid"+x[i].menu_id).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>") 
+                     $("#mid"+x[i].menu_id).html("<a  class='btn tooltipped amber darken-1' data-tooltip='Cheke in Cart'>GO to Cart</a>") 
                    menuid = x[i].menu_id
                 }
                 /*console.log(menuid)
@@ -79,8 +79,8 @@ let cartcount
             data: {menu_id:menuid,qty:1},
             success: (data)=>{
             showcart()
-            $("#mid"+menuid).html("<a  class='btn amber darken-1' href='#'>GO to Cart</a>")
-            M.toast({html: 'Added to Cart',classes:'rounded lime'})
+            $("#mid"+menuid).html("<a  class='btn tooltipped amber darken-1' data-tooltip='Cheke cart>")
+            M.toast({html: 'Added to Cart ',classes:'rounded lime'})
 
 
             },
@@ -104,7 +104,7 @@ let cartcount
             success: function(data) {
                 $(delthis).closest("tr").fadeOut().html("Menu was removed").fadeOut(3000).remove()
                 $("#mid"+menuid).html("<button type='submit' class='btn addcart' data-menu="+ menuid +">Add to Cart</button>")
-                $("#mcart").text(cartcount)
+               // $("#mcart").text(cartcount)
                 M.toast({html: 'Removed from Cart',classes: 'rounded red accent-1'})   
             }
 
@@ -117,6 +117,8 @@ let cartcount
 $(document).ready(()=>{
     if( $(".home.index").length){
         cart()
+        $('.tooltipped').tooltip();
+
     }
     if( $(".cartitems.index").length){
         cart()

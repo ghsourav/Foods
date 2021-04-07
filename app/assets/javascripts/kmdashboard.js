@@ -79,7 +79,7 @@ kitchen = function(){
 
 }
 $(document).ready(function(){
-    if($(".kmdashboard").length){
+    if($(".kmdashboard.index").length){
         kitchen();
     }
 });

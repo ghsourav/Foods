@@ -11,41 +11,37 @@
         </thead>
         <tbody>
             <% @placeorder.each do |p|%>
-            <%if p.status!='complete'%>
-            <tr>
-                <td><%=p.id%></td>
-                <td><%=p.deliverytype%></td>
-                <td>
-                    <select name="status" class="status browser-default" data-status="<%=p.id%>">
-                        <option value="<%=p.status%>" selected><%=p.status%></option>
-                        <option value="prepare">Prepare</option>
-                        <option value="cooking">Cooking</option>
-                        <option value="Serving/Packing">Serving</option>
-                        <option value="complete">Completed</option>
-                    </select>
-                </td>
-                <td>
-                    <a class="waves-effect waves-light btn modal-trigger ordermodal" data-order="<%=p.id%>" href="#order">Order Deatils</a>
-                </td>
-                <td>
-                    <a class="waves-effect waves-light btn modal-trigger usermodal" data-user="<%=p.user_id%>" href="#userdetails">Customer Contacts</a>
-                </td>
-            </tr>
-            <%end%>
+                <%if p.status!='complete'%>
+                <tr>
+                    <td><%=p.id%></td>
+                    <td><%=p.deliverytype%></td>
+                    <td>
+                        <select name="status" class="status browser-default" data-status="<%=p.id%>">
+                            <option value="<%=p.status%>" selected><%=p.status%></option>
+                            <option value="prepare">Prepare</option>
+                            <option value="cooking">Cooking</option>
+                            <option value="Serving/Packing">Serving</option>
+                            <option value="complete">Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <a class="waves-effect waves-light btn modal-trigger ordermodal" data-order="<%=p.id%>" href="#order">Order Deatils</a>
+                    </td>
+                    <td>
+                        <a class="waves-effect waves-light btn modal-trigger usermodal" data-user="<%=p.user_id%>" href="#userdetails">Customer Contacts</a>
+                    </td>
+                </tr>
+                <%end%>
             <%end%>
         </tbody>
-
-
-
-
 </section>
 
 <!-- Modal Structure Order Details Start-->
 <div id="order" class="modal">
     <div class="modal-content">
         <h4>Orders</h4>
-            <div id="mbody"></div>
-            <h5 id="billordermodal"></h5>
+        <div id="mbody"></div>
+        <h5 id="billordermodal"></h5>
     </div>
     <div class="modal-footer">
     </div>
@@ -62,4 +58,3 @@
     </div>
 </div>
 <!-- Modal Structure user Details End-->
-

@@ -1,5 +1,5 @@
 <section class="container">
-    <table class="striped" >
+    <table class="striped">
         <thead>
             <tr>
                 <th>Order id</th>
@@ -11,28 +11,28 @@
         </thead>
         <tbody>
             <% @placeorder.each do |p|%>
-            <tr>
-                <td><%=p.id%></td>
-                <td class="browser-default"><%=p.deliverytype%></td>
-                <td> <%=p.status%></td>
-                <td>
-                    <a class="waves-effect waves-light btn modal-trigger ordermodal" data-order="<%=p.id%>" href="#order">Order Deatils</a>
-                </td>
-                <td>
-                    <a class="usermodal waves-effect waves-light btn modal-trigger " data-user="<%=p.user_id%>" href="#userdetails">Customer Details</a>
-                </td>
-            </tr>
+                <tr>
+                    <td><%=p.id%></td>
+                    <td><%=p.deliverytype%></td>
+                    <td> <%=p.status%></td>
+                    <td>
+                        <a class="waves-effect waves-light btn modal-trigger ordermodal" data-order="<%=p.id%>" href="#order">Order Deatils</a>
+                    </td>
+                    <td>
+                        <a class="usermodal waves-effect waves-light btn modal-trigger " data-user="<%=p.user_id%>" href="#userdetails">Customer Details</a>
+                    </td>
+                </tr>
             <%end%>
         </tbody>
-        </table>
+    </table>
 </section>
 
 <!-- Modal Structure Order Details Start-->
 <div id="order" class="modal">
-  <div class="modal-content">
+    <div class="modal-content">
         <h4>Orders</h4>
-            <div id="mbody"></div>
-            <h5 id="billordermodal"></h5>
+        <div id="mbody"></div>
+        <h5 id="billordermodal"></h5>
     </div>
     <div class="modal-footer">
         <button class="modal-close  btn-flat">Close</button>
@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="modal-footer">
-          <button class="modal-close  btn-flat">Close</button>
+        <button class="modal-close  btn-flat">Close</button>
     </div>
 </div>
 <!-- Modal Structure user Details End-->

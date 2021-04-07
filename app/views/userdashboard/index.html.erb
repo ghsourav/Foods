@@ -1,8 +1,4 @@
-<h1>Dashboard</h1>
-
-<style>
-
-</style>
+<h1 class="center-align">Dashboard</h1>
 <section class="container">
     <header class="row ">
         <h5>Current Orders</h5>
@@ -22,7 +18,6 @@
         <%end%>
     </header>
             <button class="btn amber darken-1" data-class="content" id="showMore">Check Current Pending Orders</button>
-
     <main class="row">
         <h5>Order History</h5>
         <% @placeorder.each do |p| %>
@@ -41,7 +36,6 @@
         <%end%>
     </main>
     <button class="btn lime darken-1" data-class="content2" id="showMore2">Chek Past Orders</button>
-
     <footer class="card">
         <h5>Your Last Order</h5>
         <table>
@@ -61,14 +55,10 @@
                     <td><%=c.price%></td>
                     <td><%=c.total%></td>
                     <%end%>
-
                 </tr>
             </tbody>
         </table>
         <h5> Your Total Bill is <%=billamount%></h5>
-
-
-
     </footer>
 
 </section>
