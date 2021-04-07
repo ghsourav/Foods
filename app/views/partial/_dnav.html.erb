@@ -6,8 +6,8 @@
 
          <% if current_kmuser%>
                <!--Kithen Nav Start-->
-            <li> <%= link_to "Current Orders", "/maneger" %></li>
-            <li><a href="/k/complete" target="_blank">Completed Order</a></li>
+            <li> <%= link_to "Current Orders", maneger_path %></li>
+            <li><%= link_to "Complete Orders", k_complete_path %></li>
             <li><a class="waves-effect waves-light btn red" href="/kmlogout"><i class="material-icons left">settings_power</i>Kithen Logout</a></li>
                <!--Kithen Nav End-->
          <% else %>
