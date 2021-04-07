@@ -42,31 +42,33 @@
     <button class="btn lime darken-1" data-class="content2" id="showMore2">Chek Past Orders</button>
     <footer class="card center-align">
         <h5>Your Last Order</h5>
-        <%if @cartitem==nil %>
-            <h6>You don't order anything right now</h6>
-            <%= link_to "Order Now", "/",class:'btn pink darken-1 center' %>
-        <%else%>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>qty</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @cartitem.each do |c| %>
-                    <tr>
-                        <td><%=c.menu_name%></td>
-                        <td><%=c.qty%></td>
-                        <td><%=c.price%></td>
-                        <td><%=c.total%></td>
-                        <%end%>
-                    </tr>
-                </tbody>
-            </table>
-            <h5> Your Total Bill is <%=billamount%></h5>
-        <%end%>
+            <%if @cartitem==nil %>
+                <h6>You don't order anything right now</h6>
+                <%= link_to "Order Now", "/",class:'btn pink darken-1 center' %>
+            <%else%>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>qty</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <% @cartitem.each do |c|%>
+                             <tr>
+                                <td><%=c.menu_name%></td>
+                                <td><%=c.qty%></td>
+                                <td><%=c.price%></td>
+                                <td><%=c.total%></td>
+                            </tr>
+
+                            <%end%>
+                    </tbody>
+                </table>
+                <h5> Your Total Bill is <%=billamount%></h5>
+            <%end%>
     </footer>
 </section>
