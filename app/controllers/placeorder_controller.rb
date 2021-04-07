@@ -30,6 +30,6 @@ class PlaceorderController < ApplicationController
     end
 
     def placeorder_params
-        params.permit(:cart_id, :user_id,:deliverytype,:status,:payment)
+        params.permit(:cart_id, :user_id, :deliverytype, :status, :payment)
     end
 end

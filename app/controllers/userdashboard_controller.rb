@@ -4,9 +4,13 @@ class UserdashboardController < ApplicationController
 
   def index
     @placeorder= Placeorder.where(user_id: current_user_auth.id)
-    placeorderlast= Placeorder.where(user_id: current_user_auth.id).last.cart_id
-    @cartitem=  Cartitem.where(cart_id: placeorderlast)
+    if @placeorder.exists?
+    #placeorderlast= Placeorder.where(user_id: current_user_auth.id).last.cart_id
+    placeorderlast= @placeorder.last.cart_id
+    @cartitem=  Cartitem.where(cart_id: placeorderlast)  
+    end
     @placeordercurrent= @placeorder.where.not(status:'complete').reverse
+    
   end
 
   def profile

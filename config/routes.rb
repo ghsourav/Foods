@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get '/login', to:'usersessions#new',as:'user_login'
   post '/loginuser', to:'usersessions#create' 
   get '/logout', to:'usersessions#destroy'
-  get '/register', to: 'users#new'as:'user_register'
+  get '/register', to: 'users#new',as:'user_register'
   post '/users', to:'users#create'
   #User end
   root to: 'home#index'
