@@ -26,10 +26,10 @@ Rails.application.routes.draw do
 
   get '/dashboard', to:'userdashboard#index'
   get "/profile/:id", to: 'userdashboard#profile'
-  get '/login', to:'usersessions#new'
+  get '/login', to:'usersessions#new',as:'user_login'
   post '/loginuser', to:'usersessions#create' 
   get '/logout', to:'usersessions#destroy'
-  get '/register', to: 'users#new'
+  get '/register', to: 'users#new'as:'user_register'
   post '/users', to:'users#create'
   #User end
   root to: 'home#index'

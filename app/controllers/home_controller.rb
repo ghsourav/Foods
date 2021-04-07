@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
-
   def index
     @menus = Menu.where(enable:true)
-
   end
 
   def veg
@@ -17,5 +15,4 @@ class HomeController < ApplicationController
     @menus = Menu.where(veg:true,enable:true)
     render json: @menus
   end
-
 end

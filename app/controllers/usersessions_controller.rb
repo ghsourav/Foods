@@ -14,7 +14,7 @@ class UsersessionsController < ApplicationController
        redirect_back(fallback_location:root_path)
        flash[:notice] = "Succsess"    
         else
-        redirect_to '/login'
+        redirect_to user_login_path
         flash[:alert] = "You need to enter correct email & password"    
         end
       
@@ -22,7 +22,7 @@ class UsersessionsController < ApplicationController
 
   def destroy
     session[:user_id]=nil
-    redirect_to '/'
+    redirect_to root_path
     flash[:notice] = "You are Logout Now"    
 
   end

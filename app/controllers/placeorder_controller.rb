@@ -14,7 +14,6 @@ class PlaceorderController < ApplicationController
     end
 
 
-
     def update
         @placeorder.update_attributes(placeorder_params)
     end
