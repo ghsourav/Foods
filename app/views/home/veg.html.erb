@@ -1,13 +1,20 @@
-<section class="row">
-    <div class="col s9">
+<section class="row container">
+    <div class="col product l9 xl10 m12 s12">
         <div class="row">
             <% @menus.each do |menu| %>
                 <% if timings(menu)%>
                     <div class="col xl3 l3 m6 s12 ">
                         <!--Product Start-->
-                        <div class="card">
+                        <div class="card menu<%=controller_name%>">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator responsive-img menuimg" src="<%= menu.image%>">
+                                    <p class="right">
+                                    <%if menu.veg==true%>
+                                    <span class="green white-text badge">Veg</span>
+                                    <%else%>
+                                    <span class="badge white-text red">NonVeg</span>
+                                    <%end%>
+                                    </p>
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4"><%=menu.name%><i class="material-icons right">more_vert</i></span>
@@ -18,6 +25,7 @@
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4"><%=menu.name%><i class="material-icons right">close</i></span>
                                 <p><%=menu.description%></p>
+                                
                             </div>
                         </div>
                         <!--Product End-->
@@ -27,7 +35,7 @@
         </div>
     </div>
 
-    <div class="col s3">
+    <div class="col cart xl2 l3 m8 s12 hide-on-med-and-down">
         <table>
             <thead>
                 <tr>
@@ -36,35 +44,35 @@
                     <th>Price</th>
                     <th>Total</th>
                     <th>Remove</th>
-                    <th><button id="mcartclose" class="btn-floating grey"><i class="material-icons">close</i></button></th>
+                    <th class="hide-on-large-only"><button id="mcartclose" class="btn-floating grey"><i class="material-icons">close</i></button></th>
                 </tr>
             </thead>
             <tbody id="carttbody"></tbody>
         </table>
         <section class="placeordersection">
             <div id="billamount"></div>
-                <% if current_user_auth %>
-                    <form action="placeorder/create" method="POST">
-                        <p id="inputcartid"></p>
-                        <input type='hidden' name='user_id' value="<%= current_user_auth.id %>">
-                        <input type='hidden' name='status' value="Order received">
-                        <label>What you want</label>
-                        <select name="deliverytype" class="select" required>
-                            <option disabled selected>Choose Dine In/Take away</option>
-                            <option value="Dinein">Dine In</option>
-                            <option value="Takeaway">Take Away</option>
-                        </select>
-                        <input type='submit' value="place order" class="btn green">
-                    </form>
-                <% else %>
-                     <a href="login" class="btn green">Login to Continue</a>
-                <% end %>
+            <% if current_user_auth %>
+                <form action="placeorder/create" method="POST">
+                    <p id="inputcartid"></p>
+                    <input type='hidden' name='user_id' value="<%= current_user_auth.id %>">
+                    <input type='hidden' name='status' value="Order received">
+                    <label>What you want</label>
+                    <select name="deliverytype" class="browser-default deliverytype" required>
+                        <option disabled selected>Choose Dine In/Take away</option>
+                        <option value="Dinein">Dine In</option>
+                        <option value="Takeaway">Take Away</option>
+                    </select>
+                    <input type='submit' value="place order" class="btn green">
+                </form>
+            <% else %>
+                <a href="login" class="btn green">Login to Continue</a>
+            <% end %>
         </section>
     </div>
 </section>
 
-<div class="fixed-action-btn">
-    <button id="mcart" class="btn-floating btn-large lime">
+<div class="fixed-action-btn hide-on-large-only">
+    <button id="mcart" class="btn-floating btn-large lime ">
         <i class="large material-icons">shopping_cart</i>
     </button>
 </div>
