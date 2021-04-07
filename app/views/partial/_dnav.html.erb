@@ -6,13 +6,13 @@
 
          <% if current_kmuser%>
                <!--Kithen Nav Start-->
-            <li><a href="/maneger">Current Orders</a></li>
+            <li> <%= link_to "Current Orders", "/maneger" %></li>
             <li><a href="/k/complete" target="_blank">Completed Order</a></li>
             <li><a class="waves-effect waves-light btn red" href="/kmlogout"><i class="material-icons left">settings_power</i>Kithen Logout</a></li>
                <!--Kithen Nav End-->
          <% else %>
-            <li><a href="/veg">Veg</a></li>
-            <li><a href="/nonveg">Non Veg</a></li>
+            <li><%= link_to "Veg", veg_path %></li>
+            <li><%= link_to "non Veg", nonveg_path %></li>
    
     
         

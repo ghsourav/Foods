@@ -1,7 +1,7 @@
 <!--Mobile View Side Nav Start-->
 <ul id="slide-out" class="sidenav bgmain">
-    <li><a href="/veg">Veg</a></li>
-    <li><a href="/nonveg">Non Veg</a></li>
+    <li><%= link_to "Veg", veg_path %></li>
+    <li><%= link_to "Non Veg", nonveg_path %></li>
     <% if current_user_auth %>
         <!--User Login nav Start-->
         <li><a href="/dashboard"> <i class="material-icons left">dashboard</i> Dashboard </a> </li>
