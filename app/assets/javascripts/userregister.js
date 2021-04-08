@@ -1,4 +1,3 @@
-
 //User Validation
 let Register= function(){
     $("#conracterr").hide()
@@ -58,7 +57,6 @@ let Register= function(){
         $("#user_password,#user_password_confirmation").keyup(function(){
             let pass=$("#user_password").val()
             let cpass=$("#user_password_confirmation").val()
-            console.log(cpass)
             if(pass != cpass){
                 $("#passmatch").show()
                 $("#passmatch").html('Password match does not match')
@@ -70,14 +68,11 @@ let Register= function(){
                 $("#passmatch").removeClass('red-text')
             }
         })
-
-
     //Password Match Validation
 
 }
 $(document).ready(function(){
     if($(".users.new").length){
         Register()
-        console.log(`dgfhg`)
     }
 })
