@@ -4,7 +4,4 @@ class User < ApplicationRecord
     validates :email, :contact, :fname,  :lname, presence: true
     validates :contact,  length: { is: 10 } ,numericality: true
     validates :contact, :email , uniqueness: true
-
-
-
 end

@@ -12,7 +12,7 @@ class PlaceorderController < ApplicationController
             flash[:alert] = placeorder.errors.full_messages[0]
         end
     end
-
+    
     def update
         @placeorder.update_attributes(placeorder_params)
     end

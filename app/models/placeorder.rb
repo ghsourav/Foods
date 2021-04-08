@@ -4,7 +4,7 @@ class Placeorder < ApplicationRecord
 
     validates :deliverytype, presence: true
 
-    enum deliverytype:[:Dinein,:Takeaway]
+    #enum deliverytype:[:Dinein,:Takeaway]
 
   
   

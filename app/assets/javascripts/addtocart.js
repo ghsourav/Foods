@@ -63,11 +63,6 @@ let cartcount
     }
     showcart();
 
-
-    
-
-
-
     //Create Cart Start here
     $(".addcart").on("click",function(e){
         e.preventDefault()
@@ -118,9 +113,5 @@ $(document).ready(()=>{
     if( $(".home.index").length){
         cart()
         $('.tooltipped').tooltip();
-
-    }
-    if( $(".cartitems.index").length){
-        cart()
     }
 })

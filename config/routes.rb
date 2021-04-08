@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/getuser/:id', to:'kmdashboard#userdetails'
   get '/k/complete', to:'kmdashboard#completeorder'
 
-  get '/cart',  to:'cartitems#index'#Current Cart JSON Data 
+  get '/cart',  to:'cartitems#cartjson'#Current Cart JSON Data 
   post 'cartitems/create' 
   post 'cartitems/update'
   delete 'cartitems/destroy'

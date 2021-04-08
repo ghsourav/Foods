@@ -1,8 +1,7 @@
 class CartitemsController < ApplicationController
-
     before_action :init_cart, only: [:index, :create, :update, :destroy]
 
-    def index
+    def cartjson
       @cartitem = current_cart.cartitem
       render json: @cartitem
     end
