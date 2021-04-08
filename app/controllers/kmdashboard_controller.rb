@@ -12,7 +12,7 @@ class KmdashboardController < ApplicationController
 
   def getorder
     @placeorder = Placeorder.find(params[:id])
-    cartid = Placeorder.find(params[:id]).cart_id
+    cartid = @placeorder.cart_id
     @cartitem=  Cartitem.where(cart_id: cartid)
     render json: @cartitem
   end
