@@ -1,7 +1,4 @@
 class KmusersController < ApplicationController
-  def new
-  end
-
   def create
     kmuser = Kmuser.new(kmuser_params)
     if kmuser.save

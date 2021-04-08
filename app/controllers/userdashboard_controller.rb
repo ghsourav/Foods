@@ -8,8 +8,7 @@ class UserdashboardController < ApplicationController
       placeorderlast= @placeorder.last.cart_id
       @cartitem=  Cartitem.where(cart_id: placeorderlast)  
     end
-    @placeordercurrent= @placeorder.where.not(status:'complete').reverse
-    
+    @placeordercurrent= @placeorder.where.not(status:'complete').reverse    
   end
 
   def profile

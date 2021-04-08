@@ -2,9 +2,6 @@ class UsersController < ApplicationController
   include UserdashboardHelper
   before_action:login?
   
-  def new
-  end
- 
   def create
     user = User.new(user_params)
     if user.save
