@@ -13,7 +13,6 @@ class PlaceorderController < ApplicationController
         end
     end
 
-
     def update
         @placeorder.update_attributes(placeorder_params)
     end
@@ -24,11 +23,9 @@ class PlaceorderController < ApplicationController
     end
 
     private
-
     def placeorder_find
         @placeorder = Placeorder.find(params[:id])
     end
-
     def placeorder_params
         params.permit(:cart_id, :user_id, :deliverytype, :status, :payment)
     end
