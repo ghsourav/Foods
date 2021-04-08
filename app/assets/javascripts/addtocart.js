@@ -12,8 +12,6 @@ let cartcount
                  data: {id:cartitemid,qty:cartitemqty},
                  success: (data)=>{
                     M.toast({html: 'Cart is Updated quantity is ' +cartitemqty,classes: 'lime rounded'})
-
-                    //$(".notice").text("Menu quantity updated as"+cartitemqty).fadeOut(1000).remove(1500)
                     showcart()
                  }
              })
@@ -38,15 +36,9 @@ let cartcount
                 $("#inputcartid").html("<input type='hidden' name='cart_id' value="+ cartid +" >")
                 for(i = 0;i < x.length ; i++){
                     output +=  "<tr><td>"+ x[i].menu_name +"</td><td><select  data-qty=" + x[i].id +" class='browser-default qtycart' ><option value="+ x[i].qty +" selected>"+ x[i].qty +"</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option></select></td><td>" +  x[i].price + "</td> <td>"+ x[i].total +"</td><td> <button class='delitem material-icons btn pink' data-menuid="+x[i].menu_id+" data-id="+x[i].id+" ><i class='material-icons left'>remove_shopping_cart</i></button></td></tr>";            
-                   /*  if($("#mid"+x[i].menu_id)){
-                        $(this).html("<a  class='btn amber darken-1' href='/cart'>GO to Cart</a>")
-                     }*/
                      $("#mid"+x[i].menu_id).html("<a  class='btn tooltipped amber darken-1' data-tooltip='Cheke in Cart'>GO to Cart</a>") 
                    menuid = x[i].menu_id
                 }
-                /*console.log(menuid)
-                cartcount =  parseInt(x.length)
-                console.log(cartcount)*/
                 $("#mcart").text(cartcount)
                 $("#carttbody").html(output);
                 $(".mobileviewbtn").html("<a href='#'><i class='material-icons left'>remove_shopping_cart</i></a>")
@@ -82,7 +74,7 @@ let cartcount
 
         });
     });
-                //Create Cart End here
+    //Create Cart End here
        
     //Delete Cart data Start
 
@@ -99,7 +91,6 @@ let cartcount
             success: function(data) {
                 $(delthis).closest("tr").fadeOut().html("Menu was removed").fadeOut(3000).remove()
                 $("#mid"+menuid).html("<button type='submit' class='btn addcart' data-menu="+ menuid +">Add to Cart</button>")
-               // $("#mcart").text(cartcount)
                 M.toast({html: 'Removed from Cart',classes: 'rounded red accent-1'})   
             }
 

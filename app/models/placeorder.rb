@@ -1,11 +1,5 @@
 class Placeorder < ApplicationRecord
     belongs_to :cart
     has_many :user
-
-    validates :deliverytype, presence: true
-
-    #enum deliverytype:[:Dinein,:Takeaway]
-
-  
-  
+    validates :deliverytype,:user_id,:cart_id,:status,presence: true
 end
