@@ -71,7 +71,7 @@ let Register= function(){
             let cpass=$("#user_password_confirmation").val()
             if(pass != cpass){
                 $("#passmatch").show()
-                $("#passmatch").html('❌ Password match does not match')
+                $("#passmatch").html('❌ Password does not match')
                 $("#passmatch").addClass('red-text')
                 $("#passmatch").removeClass('lime-text')
 
