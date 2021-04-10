@@ -2,32 +2,39 @@
         <div class="col mtp s4 card z-depth-5 m6 l6">
           <fieldset>
             <legend style="color:red"> Registration </legend>
-            <%= form_for :user, url: '/users' do |f| %>
-              <i class="material-icons">account_box</i>
-              First Name: <%= f.text_field :fname %>
-              <br><p id="fnameerr"></p><br>
-              <i class="material-icons">account_box</i>
-              Last Name: <%= f.text_field :lname %>
-              <br><p id="lnameerr"></p><br>
-              <i class="material-icons">mail</i>
-              Email: <%= f.email_field :email %>
-              <br><p id="emailerr"></p><br>
-              <i class="material-icons">contact_phone</i>
-              Contact: <%= f.number_field :contact %>
-              <br><p id="conracterr"></p><br>
-              <div class="row">
-                <div class="col xl6 l6 m12 s12">
-                Password: <%= f.password_field :password %>
+              <%= form_for :user, url: '/users' do |f| %>
+                <i class="material-icons">account_box</i>
+                  First Name: <%= f.text_field :fname %>
+                <br><p id="fnameerr"></p><br>
+                <i class="material-icons">account_box</i>
+                  Last Name: <%= f.text_field :lname %>
+                <br><p id="lnameerr"></p><br>
+                
+                <div class="row">
+                  <div class="col xl6 l6 m12 s12">
+                    <i class="material-icons">mail</i>
+                      Email: <%= f.email_field :email %>
+                    <br><p id="emailerr"></p><br>
+                  </div>
+                  <div class="col xl6 l6 m12 s12">
+                    <i class="material-icons">contact_phone</i>
+                      Contact: <%= f.number_field :contact %>
+                  <br><p id="conracterr"></p><br>
+                  </div>
                 </div>
-                <div class="col xl6 l6 m12 s12"> 
-                Password Confirmation: <%= f.password_field :password_confirmation %>
+                
+                <div class="row">
+                  <div class="col xl6 l6 m12 s12">
+                    Password: <%= f.password_field :password %>
+                  </div>
+                  <div class="col xl6 l6 m12 s12"> 
+                  Password Confirmation: <%= f.password_field :password_confirmation %>
+                  </div>
+                  <br><p class="center" id="passmatch">pass match</p><br>
                 </div>
-                              <br><p class="center" id="passmatch">pass match</p><br>
 
-              </div>
-
-              <%= f.submit "Submit",value:"Singup",class:"btn green" %>
-            <% end %>
+                <%= f.submit "Submit",value:"Singup",class:"btn green" %>
+              <% end %>
           </fieldset>
         </div>  
 </section>

@@ -3,8 +3,7 @@ class Cartitem < ApplicationRecord
     belongs_to :menu
 
     before_save:set_price
-
-
+    
     def menu_name
         menu.name
     end

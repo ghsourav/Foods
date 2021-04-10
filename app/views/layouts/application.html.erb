@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Foods <%=controller_name%> </title>
     <%= csrf_meta_tags %>
@@ -8,13 +7,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
 <body class="<%=controller_name%> <%=action_name%>">
     <nav>
         <%= render "partial/dnav" %>
     </nav>
-            <%= render "partial/mnav" %>
-
+    <%= render "partial/mnav" %>
     <%= render "partial/notic" %>
         <%= yield %>
 </body>

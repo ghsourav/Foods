@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   post 'kmsessions/create'
   get '/kmlogout', to:'kmsessions#destroy'
   #get '/kmadd', to:'kmusers#new'
-  post 'kmusers/create'
- 
+  post 'kmusers/create' 
   get '/maneger', to:'kmdashboard#index',as: 'maneger'
   get '/getorder/:id', to:'kmdashboard#getorder'
   get '/getuser/:id', to:'kmdashboard#userdetails'
@@ -23,7 +22,6 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   #User start
-
   get '/dashboard', to:'userdashboard#index'
   get "/profile/:id", to: 'userdashboard#profile'
   get '/login', to:'usersessions#new',as:'user_login'

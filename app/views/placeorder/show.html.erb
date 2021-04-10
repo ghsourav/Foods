@@ -4,14 +4,11 @@
                     <div class="row ">
                         <div class="col m12 s12 l6 xl6 preview preview_height ">
                             <h4><i class=" material-icons amber-text lighten-2">local_dining</i> Foods</h4>
-                            <br>
-                            Hi, <%=current_user_auth.fname%> <br><br> Your Order No is <%=@placeorder.id%> & Bill No is <%=@placeorder.cart_id%>
+                            <br>Hi, <%=current_user_auth.fname%> <br><br> Your Order No is <%=@placeorder.id%> & Bill No is <%=@placeorder.cart_id%>
                         </div>
                         <div class="col m12 s12 xl6 l6 preview preview_height">
                             <p>Your Order will be delivered at <b><%=@placeorder.deliverytype%></b> counter
-                                <br>
-                                <br>
-                                Your Order status is <b><%=@placeorder.status%> </b></p>
+                                <br><br>Your Order status is <b><%=@placeorder.status%> </b></p>
                         </div>
                     </div>
                     <section class="preview">

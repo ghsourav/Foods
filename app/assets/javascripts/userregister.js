@@ -85,6 +85,7 @@ let Register= function(){
     //Password Match Validation end
 
 }
+
 $(document).ready(function(){
     if($(".users.new").length){
         Register()

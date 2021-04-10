@@ -6,11 +6,13 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id]= user.id
-      redirect_to user_login_path
+      #redirect_to user_login_path
+      redirect_to '/login'
+
       flash[:notice] = "Sucssesfuly Login"    
     else
       redirect_to user_register_path
-      flash[:alert] = user.errors.full_messages[0]
+      flash[:alert] = "Eroor Occured"
     end
   end
 
